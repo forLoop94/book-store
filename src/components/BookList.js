@@ -1,40 +1,34 @@
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import BookInput from './BookInput';
 import BookItem from './BookItem';
 
 const BookList = () => {
-  const booksArray = [
-    {
-      id: 1,
-      category: 'Action',
-      title: 'The Hunger Games',
-      author: 'Scarlet Summers',
-    },
-    {
-      id: 1,
-      category: 'Action',
-      title: 'The Hunger Games',
-      author: 'Scarlet Summers',
-    },
-    {
-      id: 1,
-      category: 'Action',
-      title: 'The Hunger Games',
-      author: 'Scarlet Summers',
-    },
-  ];
+  const [books, setBooks] = useState([]);
 
-  const [books, setBooks] = useState(booksArray);
+  const addBook = (title) => {
+    setBooks(() => {
+      const newBook = {
+        id: crypto.randomUUID(),
+        category: 'Science Fiction',
+        title,
+        author: 'Scarlet Summers',
+      };
+      return [...books, newBook];
+    });
+  };
+
+  const removeBook = (id) => {
+    setBooks((currentBooks) => currentBooks.filter((book) => book.id !== id));
+  };
 
   return (
     <>
       <ul>
         {books.map((book) => (
-          <BookItem key={book.id} book={book} />
+          <BookItem key={book.id} book={book} removeBook={removeBook} />
         ))}
       </ul>
-      <BookInput />
+      <BookInput addBook={addBook} />
     </>
   );
 };
