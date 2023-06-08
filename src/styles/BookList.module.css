@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.book {
+  border: 1px solid black;
+  margin: 1rem;
+  list-style-type: none;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.btnContainer {
+  margin-top: 10px;
+}
+
+button {
+  margin-right: 0.25rem;
+}
