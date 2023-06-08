@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
+import BookInput from './BookInput';
 import BookItem from './BookItem';
 
 const BookList = () => {
@@ -33,6 +34,7 @@ const BookList = () => {
           <BookItem key={book.id} book={book} />
         ))}
       </ul>
+      <BookInput />
     </>
   );
 };

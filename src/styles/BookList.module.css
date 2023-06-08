@@ -19,3 +19,16 @@
 button {
   margin-right: 0.25rem;
 }
+
+form {
+  margin: 2rem 1rem;
+}
+
+label {
+  display: block;
+}
+
+input {
+  margin-right: 1rem;
+  padding: 2px;
+}
