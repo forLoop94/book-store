@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navLinks {
+  display: flex;
+  padding: 1rem;
+  list-style-type: none;
+}
+
+.links {
+  margin-right: 10px;
+}
