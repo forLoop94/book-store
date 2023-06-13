@@ -1,7 +1,7 @@
 import React from 'react';
 
 const categories = () => (
-  <div>Home</div>
+  <h1>Categories</h1>
 );
 
 export default categories;
