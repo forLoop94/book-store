@@ -1,15 +1,26 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
-import { PropTypes } from 'prop-types';
+import { useDispatch } from 'react-redux';
 import style from '../styles/BookList.module.css';
+import { addBook } from '../redux/books/booksSlice';
 
-const BookInput = ({ addBook }) => {
+const BookInput = () => {
+  const dispatch = useDispatch();
   const [title, setTitle] = useState('');
+
+  const book = {
+    id: crypto.randomUUID(),
+    category: 'Science Fiction',
+    title,
+    author: 'Scarlet Summers',
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addBook(title);
-    setTitle('');
+    if (title !== '') {
+      dispatch(addBook({ book }));
+      setTitle('');
+    }
   };
 
   return (
@@ -26,10 +37,6 @@ const BookInput = ({ addBook }) => {
       <button type="submit">ADD BOOK</button>
     </form>
   );
-};
-
-BookInput.propTypes = {
-  addBook: PropTypes.func.isRequired,
 };
 
 export default BookInput;

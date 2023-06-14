@@ -1,34 +1,19 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import BookInput from './BookInput';
 import BookItem from './BookItem';
 
 const BookList = () => {
-  const [books, setBooks] = useState([]);
-
-  const addBook = (title) => {
-    setBooks(() => {
-      const newBook = {
-        id: crypto.randomUUID(),
-        category: 'Science Fiction',
-        title,
-        author: 'Scarlet Summers',
-      };
-      return [...books, newBook];
-    });
-  };
-
-  const removeBook = (id) => {
-    setBooks((currentBooks) => currentBooks.filter((book) => book.id !== id));
-  };
+  const books = useSelector((state) => state.books.bookList);
 
   return (
     <>
       <ul>
         {books.map((book) => (
-          <BookItem key={book.id} book={book} removeBook={removeBook} />
+          <BookItem key={book.id} book={book} />
         ))}
       </ul>
-      <BookInput addBook={addBook} />
+      <BookInput />
     </>
   );
 };
