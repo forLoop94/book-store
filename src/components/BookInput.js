@@ -7,12 +7,13 @@ import { addBook } from '../redux/books/booksSlice';
 const BookInput = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
 
   const book = {
     id: crypto.randomUUID(),
     category: 'Science Fiction',
     title,
-    author: 'Scarlet Summers',
+    author,
   };
 
   const handleSubmit = (e) => {
@@ -20,6 +21,7 @@ const BookInput = () => {
     if (title !== '') {
       dispatch(addBook({ book }));
       setTitle('');
+      setAuthor('');
     }
   };
 
@@ -33,7 +35,13 @@ const BookInput = () => {
         id="book"
         placeholder="Book Item"
       />
-      <input type="text" id="category" placeholder="Category" />
+      <input
+        type="text"
+        value={author}
+        id="author"
+        placeholder="Author"
+        onChange={(e) => setAuthor(e.target.value)}
+      />
       <button type="submit">ADD BOOK</button>
     </form>
   );
