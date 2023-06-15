@@ -15,7 +15,7 @@ function App() {
             <Link className={styles.links} to="/">BOOKS</Link>
           </li>
           <li>
-            <Link className={styles.links} to="/categories">CATEGORIES</Link>
+            <Link className={styles.categories} to="/categories">CATEGORIES</Link>
           </li>
         </ul>
       </nav>

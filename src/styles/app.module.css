@@ -6,7 +6,7 @@
 }
 
 nav {
-  padding: 2rem;
+  padding: 1.3rem;
 }
 
 .navLinks {
@@ -21,9 +21,18 @@ nav {
   color: #0290ff;
 }
 
-.links {
+.links, .categories {
   margin-right: 10px;
   text-decoration: none;
   color: black;
   font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.categories {
+  color: rgb(212, 210, 210);
+}
+
+.categories:hover {
+  color: black;
 }

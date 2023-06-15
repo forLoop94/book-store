@@ -28,7 +28,7 @@ button {
 }
 
 form {
-  padding: 0rem 4rem 4rem 4rem;
+  padding: 0 4rem 4rem 4rem;
   background-color: rgb(200, 200, 200, 0.1);
 }
 
@@ -49,12 +49,6 @@ form {
   background-color: #7fa5c3;
 }
 
-input {
-  width: 30vw;
-  height: 8vh;
-  padding: 2rem;
-}
-
 label {
   color: grey;
   font-weight: bold;
@@ -62,6 +56,8 @@ label {
 }
 
 input {
+  width: 30vw;
+  height: 3vh;
   margin-right: 1rem;
   padding: 1rem;
   font-size: 1rem;
@@ -108,7 +104,8 @@ small {
   align-items: center;
 }
 
-.right, .details {
+.right,
+.details {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
