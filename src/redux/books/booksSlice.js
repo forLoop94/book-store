@@ -67,6 +67,17 @@ const booksSlice = createSlice({
       state.bookList = state.bookList.filter((book) => book.id !== payload.id);
     },
   },
+  extraReducers(builder) {
+    builder.addCase(fetchBook.fulfilled, (state, action) => {
+      state.bookList = [];
+      Object.keys(action.payload).forEach((item) => {
+        const book = action.payload[item][0];
+        state.bookList.push({
+          id: element, title: book.title, author: book.author, category: book.category,
+        });
+      });
+    });
+  },
 });
 
 export const { addBook, removeBook } = booksSlice.actions;
