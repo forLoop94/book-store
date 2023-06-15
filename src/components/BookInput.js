@@ -2,31 +2,41 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import style from '../styles/BookList.module.css';
-import { addBook } from '../redux/books/booksSlice';
+// import { addBook } from '../redux/books/booksSlice';
+import { createBook } from '../redux/books/booksSlice';
 
 const BookInput = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
-  const book = {
-    id: crypto.randomUUID(),
-    category: 'Science Fiction',
-    title,
-    author,
-  };
+  // const book = {
+  //   id: crypto.randomUUID(),
+  //   category: 'Science Fiction',
+  //   title,
+  //   author,
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (title !== '') {
-      dispatch(addBook({ book }));
-      setTitle('');
-      setAuthor('');
-    }
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // if (title !== '') {
+  //   //   dispatch(addBook({ book }));
+  //   //   setTitle('');
+  //   //   setAuthor('');
+  //   // }
+  //   // if (title.length > 1 && author.length > 1) {
+  //   //   return dispatch(createBook({
+  //   //     item_id: crypto.randomUUID(),
+  //   //     title,
+  //   //     author,
+  //   //     category: 'Science Fiction',
+  //   //   }));
+  //   // }
+  //   // return <div>Fill in the blanks</div>;
+  // };
 
   return (
-    <form action="#" onSubmit={handleSubmit} className={style}>
+    <form className={style}>
       <label htmlFor="book">ADD NEW BOOK</label>
       <input
         value={title}
@@ -42,7 +52,24 @@ const BookInput = () => {
         placeholder="Author"
         onChange={(e) => setAuthor(e.target.value)}
       />
-      <button type="submit">ADD BOOK</button>
+      <button
+        onClick={() => {
+          if (title.length > 1 && author.length > 1) {
+            return dispatch(
+              createBook({
+                item_id: crypto.randomUUID(),
+                title,
+                author,
+                category: 'Science Fiction',
+              }),
+            );
+          }
+          return <div>Fill in the blanks</div>;
+        }}
+        type="submit"
+      >
+        ADD BOOK
+      </button>
     </form>
   );
 };
