@@ -21,7 +21,8 @@ nav {
   color: #0290ff;
 }
 
-.links, .categories {
+.links,
+.categories {
   margin-right: 10px;
   text-decoration: none;
   color: black;
