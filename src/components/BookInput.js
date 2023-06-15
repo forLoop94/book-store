@@ -26,15 +26,17 @@ const BookInput = () => {
   return (
     <form action="#" onSubmit={handleSubmit} className={style}>
       <label htmlFor="book">ADD NEW BOOK</label>
-      <input
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        type="text"
-        id="book"
-        placeholder="Book Item"
-      />
-      <input type="text" id="category" placeholder="Category" />
-      <button type="submit">ADD BOOK</button>
+      <div className={style.form}>
+        <input
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          type="text"
+          id="book"
+          placeholder="Book Item"
+        />
+        <input type="text" id="category" placeholder="Category" />
+        <button className={style.bookBtn} type="submit">ADD BOOK</button>
+      </div>
     </form>
   );
 };

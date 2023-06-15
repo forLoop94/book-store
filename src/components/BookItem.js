@@ -14,15 +14,29 @@ const BookItem = ({ book }) => {
 
   return (
     <li className={style.book}>
-      <small>{book.category}</small>
-      <h3>{book.title}</h3>
-      <p>{book.author}</p>
-      <div className={style.btnContainer}>
-        <button type="button">Comments</button>
-        <button onClick={handleClick} type="button">
-          Remove
-        </button>
-        <button type="button">Edit</button>
+      <div className={style.details}>
+        <small>{book.category}</small>
+        <h3>{book.title}</h3>
+        <p className={style.blue}>{book.author}</p>
+        <div className={style.btnContainer}>
+          <button type="button">Comments</button>
+          <button onClick={handleClick} type="button">
+            Remove
+          </button>
+          <button type="button">Edit</button>
+        </div>
+      </div>
+      <div className={style.middle}>
+        <div className={style.circle} />
+        <div className={style.circleSibling}>
+          <h4>100%</h4>
+          <p className={style.status}>Completed</p>
+        </div>
+      </div>
+      <div className={style.right}>
+        <p className={style.status}>CURRENT CHAPTER</p>
+        <h4>Chapter 17</h4>
+        <div className={style.btn}>UPDATE PROGRESS</div>
       </div>
     </li>
   );

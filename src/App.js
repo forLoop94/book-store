@@ -8,11 +8,14 @@ function App() {
     <>
       <nav>
         <ul className={styles.navLinks}>
+          <li className={styles.brand}>
+            <h1>BookStore CMS</h1>
+          </li>
           <li>
             <Link className={styles.links} to="/">BOOKS</Link>
           </li>
           <li>
-            <Link className="links" to="/categories">CATEGORIES</Link>
+            <Link className={styles.links} to="/categories">CATEGORIES</Link>
           </li>
         </ul>
       </nav>
