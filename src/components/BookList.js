@@ -14,6 +14,7 @@ const BookList = () => {
           <BookItem key={book.id} book={book} />
         ))}
       </ul>
+      <div className={styles.horizentalBreak} />
       <BookInput />
     </>
   );

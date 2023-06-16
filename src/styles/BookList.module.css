@@ -8,7 +8,7 @@
   border: 1px solid rgb(211, 207, 207);
   margin: 1rem;
   list-style-type: none;
-  padding: 1rem;
+  padding: 1rem 7rem 1rem 1rem;
   height: 27vh;
   border-radius: 4px;
   background-color: white;
@@ -16,19 +16,32 @@
   justify-content: space-between;
 }
 
+.verticalBreak {
+  width: 2px;
+  height: 95%;
+  background-color: rgb(240, 235, 235);
+  margin: 0px 1rem;
+}
+
+.otherDetails {
+  display: flex;
+  justify-content: space-between;
+  width: 35vw;
+}
+
 .btnContainer {
-  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 button {
-  margin-right: 2rem;
-  color: #0290ff;
+  color: #4386bf;
   border: none;
   background: transparent;
 }
 
 form {
-  padding: 0 4rem 4rem 4rem;
+  padding: 3rem 4rem 4rem 4rem;
   background-color: rgb(200, 200, 200, 0.1);
 }
 
@@ -43,6 +56,7 @@ form {
   color: white;
   padding: 0.7rem;
   border-radius: 3px;
+  width: 15vw;
 }
 
 .bookBtn:hover {
@@ -55,18 +69,14 @@ label {
   font-size: 1.3rem;
 }
 
-input {
-  width: 30vw;
-  height: 3vh;
-  margin-right: 1rem;
-  padding: 1rem;
-  font-size: 1rem;
-}
-
 .body {
   display: block;
   background-color: rgb(200, 200, 200, 0.1);
   padding: 2rem;
+}
+
+h4 {
+  color: #121212;
 }
 
 .circle {
@@ -82,7 +92,7 @@ small {
 }
 
 .blue {
-  color: #0290ff;
+  color: #4386bf;
 }
 
 .status {
@@ -109,4 +119,25 @@ small {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.titleInput, .catInput {
+  width: 50vw;
+  height: 3vh;
+  margin-right: 3rem;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  color: #c4c4c4;
+}
+
+.catInput {
+  width: 25vw;
+}
+
+.horizentalBreak {
+  margin: 0rem 3rem;
+  height: 2px;
+  background-color: #e8e8e8;
 }

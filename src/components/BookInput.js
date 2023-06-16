@@ -28,13 +28,14 @@ const BookInput = () => {
       <label htmlFor="book">ADD NEW BOOK</label>
       <div className={style.form}>
         <input
+          className={style.titleInput}
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           type="text"
           id="book"
           placeholder="Book Item"
         />
-        <input type="text" id="category" placeholder="Category" />
+        <input className={style.catInput} type="number" id="category" placeholder="Category" />
         <button className={style.bookBtn} type="submit">ADD BOOK</button>
       </div>
     </form>

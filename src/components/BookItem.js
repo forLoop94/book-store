@@ -20,23 +20,28 @@ const BookItem = ({ book }) => {
         <p className={style.blue}>{book.author}</p>
         <div className={style.btnContainer}>
           <button type="button">Comments</button>
+          <div className={style.verticalBreak} />
           <button onClick={handleClick} type="button">
             Remove
           </button>
+          <div className={style.verticalBreak} />
           <button type="button">Edit</button>
         </div>
       </div>
-      <div className={style.middle}>
-        <div className={style.circle} />
-        <div className={style.circleSibling}>
-          <h4>100%</h4>
-          <p className={style.status}>Completed</p>
+      <div className={style.otherDetails}>
+        <div className={style.middle}>
+          <div className={style.circle} />
+          <div className={style.circleSibling}>
+            <h4>100%</h4>
+            <p className={style.status}>Completed</p>
+          </div>
         </div>
-      </div>
-      <div className={style.right}>
-        <p className={style.status}>CURRENT CHAPTER</p>
-        <h4>Chapter 17</h4>
-        <div className={style.btn}>UPDATE PROGRESS</div>
+        <div className={style.verticalBreak} />
+        <div className={style.right}>
+          <p className={style.status}>CURRENT CHAPTER</p>
+          <h4>Chapter 17</h4>
+          <div className={style.btn}>UPDATE PROGRESS</div>
+        </div>
       </div>
     </li>
   );

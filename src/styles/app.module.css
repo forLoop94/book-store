@@ -2,11 +2,21 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Montserrat, 'Times New Roman', Times, serif;
+  font-family: Roboto, 'Times New Roman', Times, serif;
 }
 
-nav {
-  padding: 1.3rem;
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem;
+  height: 3rem;
+}
+
+.icon {
+  border: 2px solid #e8e8e8;
+  border-radius: 70%;
+  padding: 0.3rem;
 }
 
 .navLinks {
@@ -16,17 +26,17 @@ nav {
 }
 
 .brand {
-  margin-right: 1rem;
+  margin-right: 3rem;
   font-size: 1.5rem;
   color: #0290ff;
+  font-family: Montserrat, 'Times New Roman', Times, serif;
 }
 
 .links,
 .categories {
-  margin-right: 10px;
+  margin-right: 3rem;
   text-decoration: none;
-  color: black;
-  font-weight: 600;
+  color: #121212;
   font-size: 0.8rem;
 }
 
