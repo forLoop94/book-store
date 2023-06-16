@@ -20,7 +20,7 @@
   width: 2px;
   height: 95%;
   background-color: rgb(240, 235, 235);
-  margin: 0px 1rem;
+  margin: 0 1rem;
 }
 
 .otherDetails {
@@ -121,7 +121,8 @@ small {
   justify-content: space-between;
 }
 
-.titleInput, .catInput {
+.titleInput,
+.catInput {
   width: 50vw;
   height: 3vh;
   margin-right: 3rem;
@@ -137,7 +138,7 @@ small {
 }
 
 .horizentalBreak {
-  margin: 0rem 3rem;
+  margin: 0 3rem;
   height: 2px;
   background-color: #e8e8e8;
 }
