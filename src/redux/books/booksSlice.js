@@ -27,10 +27,11 @@ export const createBook = createAsyncThunk('books/createBook', async (book, thun
   }
 });
 
-export const removesBook = createAsyncThunk('books/removesBook', async (id, thunk) => {
+export const deleteBook = createAsyncThunk('books/removesBook', async (id, thunkAPI) => {
   try {
-    await axios.delete(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/6PniCavOBYZV6AbPZ91l/books/${id}`);
-    const response = thunk.dispatch(fetchBook());
+    await axios.delete(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/4uqVzDBtgCwDsFUR5aRa/books/${id}`);
+
+    const response = thunkAPI.dispatch(fetchBook());
     return response;
   } catch (error) {
     return error;
