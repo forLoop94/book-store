@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import styles from './styles/app.module.css';
 
 const Navbar = () => {
-  console.log();
   return (
     <>
       <nav>
