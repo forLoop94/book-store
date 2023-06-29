@@ -1,27 +1,42 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const initialState = {
-  bookList: [
-    {
-      id: crypto.randomUUID(),
-      title: 'The Great Gatsby',
-      author: 'John Smith',
-      category: 'Fiction',
-    },
-    {
-      id: crypto.randomUUID(),
-      title: 'Anna Karenina',
-      author: 'Leo Tolstoy',
-      category: 'Fiction',
-    },
-    {
-      id: crypto.randomUUID(),
-      title: 'The Selfish Gene',
-      author: 'Richard Dawkins',
-      category: 'Nonfiction',
-    },
-  ],
+  bookList: [],
 };
+
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/4uqVzDBtgCwDsFUR5aRa/books';
+
+export const fetchBook = createAsyncThunk('books/fetchBooks', async () => {
+  try {
+    const data = await axios.get(url);
+    return data.data;
+  } catch (error) {
+    return error;
+  }
+});
+
+export const createBook = createAsyncThunk('books/createBook', async (book, thunkAPI) => {
+  const res = JSON.stringify(book);
+  try {
+    await axios.post(url, res, { headers: { 'Content-Type': 'application/json' } });
+    const response = thunkAPI.dispatch(fetchBook());
+    return response;
+  } catch (error) {
+    return error;
+  }
+});
+
+export const deleteBook = createAsyncThunk('books/removesBook', async (id, thunkAPI) => {
+  try {
+    await axios.delete(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/4uqVzDBtgCwDsFUR5aRa/books/${id}`);
+
+    const response = thunkAPI.dispatch(fetchBook());
+    return response;
+  } catch (error) {
+    return error;
+  }
+});
 
 const booksSlice = createSlice({
   name: 'books',
@@ -33,6 +48,17 @@ const booksSlice = createSlice({
     removeBook: (state, { payload }) => {
       state.bookList = state.bookList.filter((book) => book.id !== payload.id);
     },
+  },
+  extraReducers(builder) {
+    builder.addCase(fetchBook.fulfilled, (state, action) => {
+      state.bookList = [];
+      Object.keys(action.payload).forEach((item) => {
+        const book = action.payload[item][0];
+        state.bookList.push({
+          id: item, title: book.title, author: book.author, category: book.category,
+        });
+      });
+    });
   },
 });
 
