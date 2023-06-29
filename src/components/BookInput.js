@@ -2,29 +2,15 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import style from '../styles/BookList.module.css';
-import { addBook } from '../redux/books/booksSlice';
+import { createBook } from '../redux/books/booksSlice';
 
 const BookInput = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
-
-  const book = {
-    id: crypto.randomUUID(),
-    category: 'Science Fiction',
-    title,
-    author: 'Scarlet Summers',
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (title !== '') {
-      dispatch(addBook({ book }));
-      setTitle('');
-    }
-  };
+  const [author, setAuthor] = useState('');
 
   return (
-    <form action="#" onSubmit={handleSubmit} className={style}>
+    <form className={style}>
       <label htmlFor="book">ADD NEW BOOK</label>
       <div className={style.form}>
         <input
@@ -35,8 +21,31 @@ const BookInput = () => {
           id="book"
           placeholder="Book Item"
         />
-        <input className={style.catInput} type="number" id="category" placeholder="Category" />
-        <button className={style.bookBtn} type="submit">ADD BOOK</button>
+        <input
+          className={style.catInput}
+          type="text"
+          id="category"
+          placeholder="Author"
+          onChange={(e) => setAuthor(e.target.value)}
+        />
+        <input
+          className={style.bookBtn}
+          type="button"
+          value="Add Book"
+          onClick={() => {
+            if (title.length > 1 && author.length > 1) {
+              return dispatch(
+                createBook({
+                  item_id: crypto.randomUUID(),
+                  title,
+                  author,
+                  category: 'Science Fiction',
+                }),
+              );
+            }
+            return <div>Enter title and author</div>;
+          }}
+        />
       </div>
     </form>
   );

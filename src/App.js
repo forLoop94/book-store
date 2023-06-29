@@ -1,10 +1,19 @@
 import { Route, Routes, Link } from 'react-router-dom';
 import { FaUserCircle } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import styles from './styles/app.module.css';
 import BookList from './components/BookList';
 import Categories from './components/Categories';
+import { fetchBook } from './redux/books/booksSlice';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchBook());
+  });
+
   return (
     <>
       <header>
