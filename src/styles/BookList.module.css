@@ -57,6 +57,7 @@ form {
   padding: 0.7rem;
   border-radius: 3px;
   width: 15vw;
+  border: none;
 }
 
 .bookBtn:hover {
@@ -130,7 +131,7 @@ small {
   font-size: 1rem;
   border: 1px solid #e8e8e8;
   border-radius: 3px;
-  color: #c4c4c4;
+  color: rgb(87, 87, 87);
 }
 
 .catInput {
