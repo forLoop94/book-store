@@ -5,34 +5,141 @@
 }
 
 .book {
-  border: 1px solid black;
+  border: 1px solid rgb(211, 207, 207);
   margin: 1rem;
   list-style-type: none;
-  padding: 1rem;
-  border-radius: 5px;
+  padding: 1rem 7rem 1rem 1rem;
+  height: 27vh;
+  border-radius: 4px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.verticalBreak {
+  width: 2px;
+  height: 95%;
+  background-color: rgb(240, 235, 235);
+  margin: 0 1rem;
+}
+
+.otherDetails {
+  display: flex;
+  justify-content: space-between;
+  width: 35vw;
 }
 
 .btnContainer {
-  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 button {
-  margin-right: 0.25rem;
+  color: #4386bf;
+  border: none;
+  background: transparent;
 }
 
 form {
-  margin: 2rem 1rem;
+  padding: 3rem 4rem 4rem 4rem;
+  background-color: rgb(200, 200, 200, 0.1);
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.bookBtn {
+  background-color: #0290ff;
+  color: white;
+  padding: 0.7rem;
+  border-radius: 3px;
+  width: 15vw;
+  border: none;
+}
+
+.bookBtn:hover {
+  background-color: #7fa5c3;
 }
 
 label {
-  display: block;
+  color: grey;
+  font-weight: bold;
+  font-size: 1.3rem;
 }
 
-input {
+.body {
+  display: block;
+  background-color: rgb(200, 200, 200, 0.1);
+  padding: 2rem;
+}
+
+h4 {
+  color: #121212;
+}
+
+.circle {
+  border: 5px solid #0290ff;
+  width: 4rem;
+  height: 4rem;
   margin-right: 1rem;
-  padding: 2px;
+  border-radius: 50%;
 }
 
-ul {
-  display: block;
+small {
+  color: rgb(155, 152, 152);
+}
+
+.blue {
+  color: #4386bf;
+}
+
+.status {
+  color: rgb(191, 186, 186);
+  font-size: 0.9rem;
+}
+
+.btn {
+  background-color: #0290ff;
+  padding: 0.5rem;
+  border-radius: 3px;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+}
+
+.middle {
+  display: flex;
+  align-items: center;
+}
+
+.right,
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.titleInput,
+.catInput {
+  width: 50vw;
+  height: 3vh;
+  margin-right: 3rem;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  color: rgb(87, 87, 87);
+}
+
+.catInput {
+  width: 25vw;
+}
+
+.horizentalBreak {
+  margin: 0 3rem;
+  height: 2px;
+  background-color: #e8e8e8;
 }

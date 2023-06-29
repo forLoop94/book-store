@@ -12,35 +12,41 @@ const BookInput = () => {
   return (
     <form className={style}>
       <label htmlFor="book">ADD NEW BOOK</label>
-      <input
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        type="text"
-        placeholder="Book Item"
-      />
-      <input
-        type="text"
-        value={author}
-        placeholder="Author"
-        onChange={(e) => setAuthor(e.target.value)}
-      />
-      <input
-        type="button"
-        value="Add Book"
-        onClick={() => {
-          if (title.length > 1 && author.length > 1) {
-            return dispatch(
-              createBook({
-                item_id: crypto.randomUUID(),
-                title,
-                author,
-                category: 'Science Fiction',
-              }),
-            );
-          }
-          return <div>Enter title and author</div>;
-        }}
-      />
+      <div className={style.form}>
+        <input
+          className={style.titleInput}
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          type="text"
+          id="book"
+          placeholder="Book Item"
+        />
+        <input
+          className={style.catInput}
+          type="text"
+          id="category"
+          placeholder="Author"
+          onChange={(e) => setAuthor(e.target.value)}
+        />
+        <input
+          className={style.bookBtn}
+          type="button"
+          value="Add Book"
+          onClick={() => {
+            if (title.length > 1 && author.length > 1) {
+              return dispatch(
+                createBook({
+                  item_id: crypto.randomUUID(),
+                  title,
+                  author,
+                  category: 'Science Fiction',
+                }),
+              );
+            }
+            return <div>Enter title and author</div>;
+          }}
+        />
+      </div>
     </form>
   );
 };
