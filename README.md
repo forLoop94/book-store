@@ -50,7 +50,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-N/A
+[Live-demo](https://book-store-3kqg.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
