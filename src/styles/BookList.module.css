@@ -20,7 +20,6 @@
   width: 2px;
   height: 95%;
   background-color: rgb(240, 235, 235);
-  margin: 0 1rem;
 }
 
 .otherDetails {
@@ -38,6 +37,11 @@ button {
   color: #4386bf;
   border: none;
   background: transparent;
+  padding: 0.3rem 0.5rem;
+}
+
+button:hover {
+  background-color: rgb(248, 243, 243);
 }
 
 form {
@@ -124,7 +128,7 @@ small {
 
 .titleInput,
 .catInput {
-  width: 50vw;
+  width: 30vw;
   height: 3vh;
   margin-right: 3rem;
   padding: 1rem;
