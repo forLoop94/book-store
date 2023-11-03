@@ -7,6 +7,7 @@ import { createBook } from '../redux/books/booksSlice';
 const BookInput = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
+  const [image, setImage] = useState('');
   const [author, setAuthor] = useState('');
 
   return (
@@ -29,6 +30,13 @@ const BookInput = () => {
           onChange={(e) => setAuthor(e.target.value)}
         />
         <input
+          className={style.catInput}
+          type="text"
+          id="category"
+          placeholder="Image URL"
+          onChange={(e) => setImage(e.target.value)}
+        />
+        <input
           className={style.bookBtn}
           type="button"
           value="Add Book"
@@ -38,6 +46,7 @@ const BookInput = () => {
                 createBook({
                   item_id: crypto.randomUUID(),
                   title,
+                  image,
                   author,
                   category: 'Science Fiction',
                 }),

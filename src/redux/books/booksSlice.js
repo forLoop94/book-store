@@ -55,7 +55,11 @@ const booksSlice = createSlice({
       Object.keys(action.payload).forEach((item) => {
         const book = action.payload[item][0];
         state.bookList.push({
-          id: item, title: book.title, author: book.author, category: book.category,
+          id: item,
+          title: book.title,
+          image: book.image,
+          author: book.author,
+          category: book.category,
         });
       });
     });
