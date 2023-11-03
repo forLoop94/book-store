@@ -57,7 +57,6 @@ const booksSlice = createSlice({
         state.bookList.push({
           id: item,
           title: book.title,
-          image: book.image,
           author: book.author,
           category: book.category,
         });
