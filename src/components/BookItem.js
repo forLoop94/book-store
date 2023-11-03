@@ -7,11 +7,9 @@ import { deleteBook } from '../redux/books/booksSlice';
 const BookItem = ({ book }) => {
   const dispatch = useDispatch();
   const { id } = book;
-  console.log(book.image);
 
   return (
     <li className={style.book}>
-      <img src={book.image} alt={book.title} />
       <div className={style.details}>
         <small>{book.category}</small>
         <h3>{book.title}</h3>
@@ -48,7 +46,6 @@ const BookItem = ({ book }) => {
 BookItem.propTypes = {
   book: PropTypes.shape({
     id: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
